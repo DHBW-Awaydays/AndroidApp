@@ -32,9 +32,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewholder> {
 
         holder.event.setText(fahrt.zielEvent);
 
-        holder.preis.setText(Double.toString(fahrt.preis)+" €");
+        holder.preis.setText(Double.toString(fahrt.preis)+"0 €");
         holder.datum.setText(fahrt.datum);
-        holder.abfahrtsort.setText(fahrt.startPunkt);
+        holder.abfahrtsort.setText("ab: "+fahrt.startPunkt);
         holder.bewertung.setRating(fahrt.bewertung);
     }
 

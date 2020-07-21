@@ -38,14 +38,13 @@
                 android:layout_alignParentRight="true"
                 android:background="#00FFFFFF"
                 android:backgroundTint="#FFFFFF"
-                android:onClick="lupe"
                 app:srcCompat="@android:drawable/ic_menu_search" />
 
             <ImageButton
                 android:id="@+id/imageButton2"
-                android:layout_alignParentRight="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
                 android:background="#00FFFFFF"
                 app:srcCompat="@android:drawable/ic_menu_add" />
 

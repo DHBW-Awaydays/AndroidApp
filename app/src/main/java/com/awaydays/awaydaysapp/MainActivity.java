@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         mData.add(new Fahrt("TSG Hoffenheim - VfB Stuttgart","Mannheim","21.07.2020", 11.00,5));
         mData.add(new Fahrt("Eintracht Frankfurt - Mainz 05","Mannheim","21.07.2020", 8.00,3));
         mData.add(new Fahrt("Eintracht Frankfurt - Mainz 05","Mannheim","21.07.2020", 12.00,1));
+        mData.add(new Fahrt("Eintracht Frankfurt - Mainz 05","Mannheim","21.07.2020", 12.00,1));
 
         mMyAdapter= new MyAdapter(mData);
         RecyclerView recyclerView = findViewById(R.id.liste);

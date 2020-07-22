@@ -14,7 +14,7 @@ import org.w3c.dom.Text;
 
 public class search extends AppCompatActivity {
     Toolbar toolbar;
-    Intent intentPlus = new Intent(this, MainActivity.class);
+    Intent intentPlus;
 
     int counter = 0;
 

@@ -17,6 +17,15 @@ public class erstellen extends AppCompatActivity {
     Intent intentDashboard;
     Intent intentLupe;
 
+    double preis=0;
+    String amountPreis ="0";
+
+    int plätze=0;
+    String amountPlätze="0";
+
+    TextView PreisView;
+    TextView PlatzView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,11 +49,61 @@ public class erstellen extends AppCompatActivity {
                 startActivity(intentDashboard);
             }
         });
+
+        PreisView=findViewById(R.id.preisTv);
+
+        PlatzView=findViewById(R.id.platzeditText);
     }
 
     public void erstellen (View view)
     {
         Toast.makeText(this, "Anfrage erstellt!", Toast.LENGTH_SHORT).show();
+    }
+
+    public void plusPreis (View view)
+    {
+        preis++;
+
+        amountPreis = Double.toString(preis);
+
+        PreisView.setText(amountPreis);
+    }
+
+    public void minusPreis (View view)
+    {
+
+        if(preis>0)
+        {
+            preis--;
+
+            amountPreis = Double.toString(preis);
+
+            PreisView.setText(amountPreis);
+        }
+
+    }
+
+    public void minusPlatz (View view)
+    {
+        if(plätze>0)
+        {
+            plätze--;
+
+            amountPlätze = Double.toString(plätze);
+
+            PlatzView.setText(amountPlätze);
+        }
+
+    }
+
+    public void plusPlatz (View view)
+    {
+            plätze++;
+
+            amountPlätze = Double.toString(plätze);
+
+            PlatzView.setText(amountPlätze);
+
     }
 
 

@@ -15,34 +15,25 @@ import java.util.ArrayList;
 public class MyAdapter extends RecyclerView.Adapter<MyViewholder> {
 
     ArrayList<Fahrt> mData;
-    Activity callingActivity;
-    public MyAdapter(ArrayList<Fahrt> aData, Activity callingActivity) {
+    private OnRideListener mOnRideListener;
+
+    public MyAdapter(ArrayList<Fahrt> aData, OnRideListener OnRideListener) {
         this.mData =  aData;
-        this.callingActivity = callingActivity;
+        this.mOnRideListener = OnRideListener;
     }
+
     @NonNull
     @Override
     public MyViewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View newView = inflater.inflate(R.layout.listenelementlayout, parent, false);
-
-        final MyViewholder viewholder = new MyViewholder(newView);
-
-        newView.setOnClickListener();
-
-        newView.setOnClickListener((View.OnClickListener) {
-
-        Intent intent =  new Intent(MyAdapter.this.callingActivity, detail.class);
-        intent.putExtra("object_id",viewholder.event);
-
-        MyAdapter.this.callingActivity.startActivity(intent);
-        });
-
-
-
-        return viewholder;
+        return new MyViewholder(newView, mOnRideListener);
     }
 
+
+    public interface OnRideListener {
+            void onRideClick(int position);
+    }
 
     @Override
     public void  onBindViewHolder(@NonNull MyViewholder holder, int pos) {
@@ -60,4 +51,4 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewholder> {
     public int getItemCount() {
         return mData.size();
     }
-}
+    }

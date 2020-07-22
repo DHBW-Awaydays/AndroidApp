@@ -7,13 +7,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MyAdapter.OnRideListener
+{
     ArrayList<Fahrt> mData;
     MyAdapter mMyAdapter;
     Intent intentPlus;
@@ -37,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
         mData.add(new Fahrt("Eintracht Frankfurt - Mainz 05","Mannheim","21.07.2020", 12.00,1));
         mData.add(new Fahrt("Eintracht Frankfurt - Mainz 05","Mannheim","21.07.2020", 12.00,1));
 
-        Activity detail = new Activity();
+        //Activity detail = new Activity();
 
-        mMyAdapter= new MyAdapter(mData, detail);
+        mMyAdapter= new MyAdapter(mData,  this);
         RecyclerView recyclerView = findViewById(R.id.liste);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter((mMyAdapter));
@@ -63,5 +65,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentPlus);
             }
         });
+    }
+
+    @Override
+    public void onRideClick(int position) {
+        Log.d("LEL", "click from acticvit");
+        Intent intent = new Intent(this, detail.class);
+        mData.get(position);
+        //intent befüllen
+        startActivity(intent);
     }
 }

@@ -215,16 +215,16 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.131"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+                app:layout_constraintTop_toBottomOf="@+id/fahrtbioTv" />
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/fahrtbioTv"
                 android:layout_width="0dp"
                 android:layout_height="152dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="216dp"
                 android:layout_marginEnd="16dp"
-                android:text="Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung "
+                android:text="Hallo ich bin der bärtige Bartholomäus. Freunde dürfen mich Barti nennen. Also nennt mich einfach Bartholomäus."
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -247,6 +247,14 @@
                 android:background="?android:attr/listDivider"
                 app:layout_constraintTop_toBottomOf="@+id/profilbild2"
                 tools:layout_editor_absoluteX="1dp" />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="409dp"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintTop_toBottomOf="@+id/fahrtbioTv"
+                tools:layout_editor_absoluteX="8dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

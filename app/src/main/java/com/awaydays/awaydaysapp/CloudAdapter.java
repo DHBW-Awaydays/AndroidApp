@@ -86,16 +86,40 @@ public class CloudAdapter {
         });
     }
 
+    public void login(String[][] params, loginHelper loginH) {
+        FormBody requestBody = bodybuilder(params).build();
+        String url = baseURL+"/login";
+        Request request = new Request.Builder().url(url).post(requestBody).build();
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                //inform Serverproblems
+                Log.i("info", "in POST ERROR");
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(@NotNull Call call, @NotNull final Response response) throws IOException {
+                if (response.isSuccessful()) {
+                    if(response.code()==200){
+                        loginH.setStatus("SUCCESS");
+                    }else{
+                        loginH.setStatus("FAILURE");
+                    }
+
+                } else {
+                    Log.i("info", "in POST mo success");
+                }
+            }
+        });
+    }
+
     private FormBody.Builder bodybuilder(String[][] params) {
         FormBody.Builder builder = new FormBody.Builder();
         for (int i = 0; i < params.length; i++) {
             builder.add(params[i][0], params[i][1]);
         }
         return builder;
-    }
-
-    public void checkedLogin(String[][] params) {
-
     }
 
 

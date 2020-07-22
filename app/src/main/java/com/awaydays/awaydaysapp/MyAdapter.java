@@ -18,7 +18,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewholder> {
     private OnRideListener mOnRideListener;
 
     public MyAdapter(ArrayList<Fahrt> aData, OnRideListener OnRideListener) {
-        this.mData =  aData;
+        this.mData = aData;
         this.mOnRideListener = OnRideListener;
     }
 
@@ -32,18 +32,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewholder> {
 
 
     public interface OnRideListener {
-            void onRideClick(int position);
+        void onRideClick(int position);
     }
 
     @Override
-    public void  onBindViewHolder(@NonNull MyViewholder holder, int pos) {
+    public void onBindViewHolder(@NonNull MyViewholder holder, int pos) {
         Fahrt fahrt = mData.get(pos);
 
         holder.event.setText(fahrt.zielEvent);
 
-        holder.preis.setText(Double.toString(fahrt.preis)+"0 €");
+        holder.preis.setText(Double.toString(fahrt.preis) + "0 €");
         holder.datum.setText(fahrt.datum);
-        holder.abfahrtsort.setText("ab: "+fahrt.startPunkt);
+        holder.abfahrtsort.setText("ab: " + fahrt.startPunkt);
         holder.bewertung.setRating(fahrt.bewertung);
     }
 
@@ -51,4 +51,4 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewholder> {
     public int getItemCount() {
         return mData.size();
     }
-    }
+}

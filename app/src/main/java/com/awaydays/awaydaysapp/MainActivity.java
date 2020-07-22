@@ -14,34 +14,34 @@ import android.widget.ImageButton;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements MyAdapter.OnRideListener
-{
+public class MainActivity extends AppCompatActivity implements MyAdapter.OnRideListener {
     ArrayList<Fahrt> mData;
     MyAdapter mMyAdapter;
     Intent intentPlus;
     Intent intentLupe;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mData = new ArrayList<>();
-        mData.add(new Fahrt("TSG Hoffenheim - VfB Stuttgart","Mannheim","21.07.2020", 15.00,4));
-        mData.add(new Fahrt("TSG Hoffenheim - VfB Stuttgart","Mannheim","21.07.2020", 11.00,5));
-        mData.add(new Fahrt("Eintracht Frankfurt - Mainz 05","Mannheim","21.07.2020", 8.00,3));
-        mData.add(new Fahrt("Eintracht Frankfurt - Mainz 05","Mannheim","21.07.2020", 12.00,1));
-        mData.add(new Fahrt("TSG Hoffenheim - VfB Stuttgart","Mannheim","21.07.2020", 15.00,4));
-        mData.add(new Fahrt("TSG Hoffenheim - VfB Stuttgart","Mannheim","21.07.2020", 11.00,5));
-        mData.add(new Fahrt("Eintracht Frankfurt - Mainz 05","Mannheim","21.07.2020", 8.00,3));
-        mData.add(new Fahrt("Eintracht Frankfurt - Mainz 05","Mannheim","21.07.2020", 12.00,1));
-        mData.add(new Fahrt("TSG Hoffenheim - VfB Stuttgart","Mannheim","21.07.2020", 15.00,4));
-        mData.add(new Fahrt("TSG Hoffenheim - VfB Stuttgart","Mannheim","21.07.2020", 11.00,5));
-        mData.add(new Fahrt("Eintracht Frankfurt - Mainz 05","Mannheim","21.07.2020", 8.00,3));
-        mData.add(new Fahrt("Eintracht Frankfurt - Mainz 05","Mannheim","21.07.2020", 12.00,1));
-        mData.add(new Fahrt("Eintracht Frankfurt - Mainz 05","Mannheim","21.07.2020", 12.00,1));
+        mData.add(new Fahrt("TSG Hoffenheim - VfB Stuttgart", "Mannheim", "21.07.2020", 15.00, 4));
+        mData.add(new Fahrt("TSG Hoffenheim - VfB Stuttgart", "Mannheim", "21.07.2020", 11.00, 5));
+        mData.add(new Fahrt("Eintracht Frankfurt - Mainz 05", "Mannheim", "21.07.2020", 8.00, 3));
+        mData.add(new Fahrt("Eintracht Frankfurt - Mainz 05", "Mannheim", "21.07.2020", 12.00, 1));
+        mData.add(new Fahrt("TSG Hoffenheim - VfB Stuttgart", "Mannheim", "21.07.2020", 15.00, 4));
+        mData.add(new Fahrt("TSG Hoffenheim - VfB Stuttgart", "Mannheim", "21.07.2020", 11.00, 5));
+        mData.add(new Fahrt("Eintracht Frankfurt - Mainz 05", "Mannheim", "21.07.2020", 8.00, 3));
+        mData.add(new Fahrt("Eintracht Frankfurt - Mainz 05", "Mannheim", "21.07.2020", 12.00, 1));
+        mData.add(new Fahrt("TSG Hoffenheim - VfB Stuttgart", "Mannheim", "21.07.2020", 15.00, 4));
+        mData.add(new Fahrt("TSG Hoffenheim - VfB Stuttgart", "Mannheim", "21.07.2020", 11.00, 5));
+        mData.add(new Fahrt("Eintracht Frankfurt - Mainz 05", "Mannheim", "21.07.2020", 8.00, 3));
+        mData.add(new Fahrt("Eintracht Frankfurt - Mainz 05", "Mannheim", "21.07.2020", 12.00, 1));
+        mData.add(new Fahrt("Eintracht Frankfurt - Mainz 05", "Mannheim", "21.07.2020", 12.00, 1));
 
         //Activity detail = new Activity();
 
-        mMyAdapter= new MyAdapter(mData,  this);
+        mMyAdapter = new MyAdapter(mData, this);
         RecyclerView recyclerView = findViewById(R.id.liste);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter((mMyAdapter));

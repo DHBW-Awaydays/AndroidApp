@@ -15,6 +15,7 @@ public class erstellen extends AppCompatActivity {
     MyAdapter mMyAdapter;
     Intent intentDashboard;
     Intent intentLupe;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

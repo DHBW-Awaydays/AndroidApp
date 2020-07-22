@@ -14,7 +14,7 @@ public class Fahrt {
     String datum;
     int bewertung;
 
-    public Fahrt(String zielEvent, String startPunkt, String datum, double preis, int bewertung){
+    public Fahrt(String zielEvent, String startPunkt, String datum, double preis, int bewertung) {
         this.zielEvent = zielEvent;
         this.startPunkt = startPunkt;
         this.datum = datum;

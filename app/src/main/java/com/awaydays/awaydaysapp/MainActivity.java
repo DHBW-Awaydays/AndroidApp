@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -36,7 +37,9 @@ public class MainActivity extends AppCompatActivity {
         mData.add(new Fahrt("Eintracht Frankfurt - Mainz 05","Mannheim","21.07.2020", 12.00,1));
         mData.add(new Fahrt("Eintracht Frankfurt - Mainz 05","Mannheim","21.07.2020", 12.00,1));
 
-        mMyAdapter= new MyAdapter(mData);
+        Activity detail = new Activity();
+
+        mMyAdapter= new MyAdapter(mData, detail);
         RecyclerView recyclerView = findViewById(R.id.liste);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter((mMyAdapter));
@@ -61,9 +64,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-    public void clickPlus(){
-
-    }
-
 }

@@ -22,4 +22,5 @@ public class MyViewholder extends RecyclerView.ViewHolder {
         bewertung = itemView.findViewById(R.id.bewertungRb);
 
     }
+
 }

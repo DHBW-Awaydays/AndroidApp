@@ -5,9 +5,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.text.Editable;
-import android.view.View;
-import android.widget.Toolbar;
 
 import java.util.ArrayList;
 

@@ -25,7 +25,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="2dp"
+                android:clickable="true"
                 android:foregroundTint="#FFFFFF"
+                android:onClick="onClickAwaydays"
                 android:text="awaydays"
                 android:textAlignment="textStart"
                 android:textColor="#FFFFFF"
@@ -50,6 +52,8 @@
                 android:layout_height="50dp"
                 android:layout_alignParentRight="true"
                 android:background="#00FFFFFF"
+                android:clickable="true"
+                android:onClick="onClickErstellen"
                 app:layout_constraintEnd_toStartOf="@id/imageButton3"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@android:drawable/ic_menu_add" />

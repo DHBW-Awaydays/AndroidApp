@@ -24,6 +24,8 @@ public class MyViewholder extends RecyclerView.ViewHolder implements View.OnClic
 
     }
 
+
+
     @Override
     public void onClick(View view) {
         System.out.println("recieved Click in viewholder");

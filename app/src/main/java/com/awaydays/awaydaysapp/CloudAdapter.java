@@ -30,11 +30,7 @@ public class CloudAdapter {
 
     public void execPost(String url, String[][] params, final Activity callingActivity, final TextView toAlter) throws IOException {
         Log.i("info", "in POST");
-        FormBody.Builder builder = new FormBody.Builder();
-        for (int i = 0; i < params.length; i++) {
-            builder.add(params[i][0], params[i][1]);
-        }
-        RequestBody formBody = builder.build();
+        RequestBody formBody = bodybuilder(params).build();
         url = baseURL + url;
         Log.i("info", url);
         Request request = new Request.Builder().url(url).post(formBody).build();
@@ -48,7 +44,7 @@ public class CloudAdapter {
 
             @Override
             public void onResponse(@NotNull Call call, @NotNull final Response response) throws IOException {
-                if(response.isSuccessful()) {
+                if (response.isSuccessful()) {
                     Log.i("info", "in POST onResponse");
                     callingActivity.runOnUiThread(new Runnable() {
                         @Override
@@ -61,7 +57,7 @@ public class CloudAdapter {
                         }
                     });
                     //doResponseShit
-                }else {
+                } else {
                     Log.i("info", "in POST mo success");
                 }
             }
@@ -83,11 +79,23 @@ public class CloudAdapter {
                 if (response.isSuccessful()) {
                     Log.i("info", "in GET onResponse");
                     //doResponseShit
-                }else {
+                } else {
                     Log.i("info", "in GET no success");
                 }
             }
         });
+    }
+
+    private FormBody.Builder bodybuilder(String[][] params) {
+        FormBody.Builder builder = new FormBody.Builder();
+        for (int i = 0; i < params.length; i++) {
+            builder.add(params[i][0], params[i][1]);
+        }
+        return builder;
+    }
+
+    public void checkedLogin(String[][] params) {
+
     }
 
 

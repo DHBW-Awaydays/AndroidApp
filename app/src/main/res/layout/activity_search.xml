@@ -89,7 +89,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+                app:layout_constraintTop_toBottomOf="@+id/anzahlPlätzeTv" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName"
@@ -155,40 +155,45 @@
                 app:layout_constraintTop_toBottomOf="@+id/startortText" />
 
             <EditText
-                android:id="@+id/editTextNumber"
+                android:id="@+id/anzahlPlätzeTv"
                 android:layout_width="102dp"
                 android:layout_height="49dp"
                 android:layout_marginTop="80dp"
+                android:editable="false"
                 android:ems="10"
+                android:enabled="false"
                 android:inputType="number"
+                android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/zeitTv" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/minusButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button"
+                android:onClick="minus"
+                android:text="-"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/editTextNumber"
-                app:layout_constraintHorizontal_bias="0.484"
+                app:layout_constraintEnd_toStartOf="@+id/anzahlPlätzeTv"
+                app:layout_constraintHorizontal_bias="0.575"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.838" />
+                app:layout_constraintVertical_bias="0.852" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/plusButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button"
+                android:onClick="plus"
+                android:text="+"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.537"
-                app:layout_constraintStart_toEndOf="@+id/editTextNumber"
+                app:layout_constraintStart_toEndOf="@+id/anzahlPlätzeTv"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.838" />
+                app:layout_constraintVertical_bias="0.852" />
 
             <TextView
                 android:id="@+id/datumText"

@@ -98,8 +98,8 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:ems="10"
+                android:hint="Event"
                 android:inputType="textPersonName"
-                android:text="Event"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -120,6 +120,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:ems="10"
+                android:hint="Datum"
                 android:inputType="date|text"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/datumTv" />
@@ -129,7 +130,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Bitte Eventort eingeben"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
@@ -139,10 +140,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:ems="10"
+                android:hint="Eventort"
                 android:inputType="textPersonName"
-                android:text="Eventort"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/eventortTv" />
 
@@ -151,7 +152,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="12dp"
                 android:text="Bitte Startort eingeben"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
@@ -161,73 +162,44 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:ems="10"
+                android:hint="Startort"
                 android:inputType="textPersonName"
-                android:text="Startort"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/startortTv" />
-
-            <TextView
-                android:id="@+id/preisTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:text="Preis pro Person eingeben"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/startortPt" />
 
             <Button
                 android:id="@+id/button4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="8dp"
                 android:text="-"
+                app:layout_constraintEnd_toStartOf="@+id/preisTv"
+                app:layout_constraintHorizontal_bias="0.169"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/preisTv" />
-
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="32dp"
-                android:text="+"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/button4" />
-
-            <EditText
-                android:id="@+id/editTextNumber2"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:ems="10"
-                android:inputType="number"
-                android:text="1"
-                android:textAlignment="center"
-                app:layout_constraintEnd_toStartOf="@+id/button5"
-                app:layout_constraintHorizontal_bias="0.48"
-                app:layout_constraintStart_toEndOf="@+id/button4"
-                app:layout_constraintTop_toBottomOf="@+id/preisTv" />
+                app:layout_constraintTop_toBottomOf="@+id/PpPText" />
 
             <TextView
                 android:id="@+id/anzahlPlaetzeTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="28dp"
                 android:text="Anzahl verfügbarer Plätze wählen"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button4" />
+                app:layout_constraintTop_toBottomOf="@+id/preisTv" />
 
             <Button
                 android:id="@+id/button6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
                 android:text="-"
+                app:layout_constraintEnd_toStartOf="@+id/editText2"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/anzahlPlaetzeTv" />
 
@@ -235,24 +207,24 @@
                 android:id="@+id/button7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
+                android:layout_marginTop="12dp"
                 android:text="+"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.46"
+                app:layout_constraintStart_toEndOf="@+id/editText2"
                 app:layout_constraintTop_toBottomOf="@+id/anzahlPlaetzeTv" />
 
             <EditText
-                android:id="@+id/editTextNumber3"
+                android:id="@+id/editText2"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="12dp"
                 android:ems="10"
                 android:inputType="number"
                 android:text="1"
                 android:textAlignment="center"
-                app:layout_constraintEnd_toStartOf="@+id/button7"
-                app:layout_constraintHorizontal_bias="0.456"
-                app:layout_constraintStart_toEndOf="@+id/button6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/anzahlPlaetzeTv" />
 
             <TextView
@@ -263,21 +235,18 @@
                 android:layout_marginTop="16dp"
                 android:text="Bitte Fahrtbiografie eingeben"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button6" />
+                app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
             <EditText
                 android:id="@+id/bioPt"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
                 android:ems="10"
+                android:hint="Fahrtbiografie eingeben..."
                 android:inputType="textPersonName"
-                android:text="Fahrtbiografie eingeben..."
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bioTv" />
+                app:layout_constraintTop_toBottomOf="@+id/bioTv"
+                tools:layout_editor_absoluteX="8dp" />
 
             <Button
                 android:id="@+id/einstellenBtn"
@@ -289,8 +258,44 @@
                 android:text="Fahrt erstellen"
                 android:textColor="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/bioPt" />
+
+            <EditText
+                android:id="@+id/preisTv"
+                android:layout_width="110dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="number"
+                android:text="1"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/PpPText" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="36dp"
+                android:text="+"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/preisTv"
+                app:layout_constraintTop_toBottomOf="@+id/PpPText" />
+
+            <TextView
+                android:id="@+id/PpPText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Preis pro Person eingeben"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/startortPt" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

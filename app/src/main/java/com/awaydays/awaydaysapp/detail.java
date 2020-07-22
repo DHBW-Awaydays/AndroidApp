@@ -3,6 +3,7 @@ package com.awaydays.awaydaysapp;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,9 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 public class detail extends AppCompatActivity {
     Toolbar toolbar;
 
-    int counter = 0;
+    int counter =0;
 
-    String amount = "0";
+    String amount ="0";
 
     TextView cView;
 
@@ -21,30 +22,38 @@ public class detail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        cView = findViewById(R.id.anzahlPlätzeTv);
+        cView=findViewById(R.id.anzahlPlätzeTv);
 
     }
 
-    public void plus(View view) {
-        if (counter < 13) {
+    public void plus (View view)
+    {
+        if(counter<13)
+        {
             counter++;
 
         }
 
-        amount = Integer.toString(counter);
+        amount=Integer.toString(counter);
 
         cView.setText(amount);
     }
 
-    public void minus(View view) {
-        if (counter > 0) {
+    public void minus (View view)
+    {
+        if(counter>0)
+        {
             counter--;
         }
 
-        amount = Integer.toString(counter);
+        amount=Integer.toString(counter);
 
         cView.setText(amount);
+    }
 
+    public void anfragen (View view)
+    {
+        Toast.makeText(this, "Anfrage gesendet!", Toast.LENGTH_SHORT).show();
 
     }
 

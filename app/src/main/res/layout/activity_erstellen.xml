@@ -277,6 +277,7 @@
                 android:id="@+id/einstellenBtn"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
                 android:text="Fahrt erstellen"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class ErstellenActivity extends AppCompatActivity {
+public class erstellen extends AppCompatActivity {
     ArrayList<Fahrt> mData;
     MyAdapter mMyAdapter;
     @Override

@@ -172,6 +172,7 @@
                 android:id="@+id/preisTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:text="Preis pro Person eingeben"
                 app:layout_constraintStart_toStartOf="parent"
@@ -266,21 +267,27 @@
 
             <EditText
                 android:id="@+id/bioPt"
-                android:layout_width="402dp"
+                android:layout_width="0dp"
                 android:layout_height="40dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:text="Fahrtbiografie eingeben..."
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/bioTv" />
 
             <Button
                 android:id="@+id/einstellenBtn"
-                android:layout_width="200dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
                 android:background="@color/colorPrimary"
                 android:text="Fahrt erstellen"
+                android:textColor="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/bioPt" />

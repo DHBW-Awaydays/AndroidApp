@@ -38,5 +38,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter((mMyAdapter));
 
     }
+    public void clickPlus(){
+
+    }
 
 }

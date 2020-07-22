@@ -31,6 +31,10 @@ public class search extends AppCompatActivity {
         cView = findViewById(R.id.anzahlPlätzeTv);
 
     }
+    public void onClickSuchen(View view){
+        intentPlus = new Intent(this, MainActivity.class);
+        startActivity(intentPlus);
+    }
 
     public void onClickErstellen(View view){
         ImageButton plusBtn = (ImageButton) findViewById(R.id.plusBtn);

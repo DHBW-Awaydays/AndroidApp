@@ -279,6 +279,8 @@
                 android:layout_width="115dp"
                 android:layout_height="45dp"
                 android:layout_marginTop="16dp"
+                android:clickable="false"
+                android:editable="false"
                 android:ems="10"
                 android:inputType="number"
                 android:text="1"

@@ -102,7 +102,7 @@
                 android:layout_marginTop="64dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/unbenannt32"
+                app:srcCompat="@drawable/auch_cool"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <Button

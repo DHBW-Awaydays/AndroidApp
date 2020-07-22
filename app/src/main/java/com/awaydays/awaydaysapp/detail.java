@@ -76,7 +76,8 @@ public class detail extends AppCompatActivity {
     public void anfragen (View view)
     {
         Toast.makeText(this, "Anfrage gesendet!", Toast.LENGTH_SHORT).show();
-
+        intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
 }

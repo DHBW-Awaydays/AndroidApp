@@ -55,9 +55,15 @@ public class erstellen extends AppCompatActivity {
         PlatzView=findViewById(R.id.platzeditText);
     }
 
+    public void onFahrtErstellen(View view){
+
+    }
+
     public void erstellen (View view)
     {
-        Toast.makeText(this, "Anfrage erstellt!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Fahrt erstellt!", Toast.LENGTH_SHORT).show();
+        intentDashboard = new Intent(this, MainActivity.class);
+        startActivity(intentDashboard);
     }
 
     public void plusPreis (View view)

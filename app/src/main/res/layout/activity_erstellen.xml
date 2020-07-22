@@ -43,18 +43,18 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageButton
-                    android:id="@+id/imageButton"
+                    android:id="@+id/searchBtn"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_alignParentRight="true"
                     android:background="#00FFFFFF"
                     android:backgroundTint="#FFFFFF"
-                    app:layout_constraintEnd_toStartOf="@id/imageButton2"
+                    app:layout_constraintEnd_toStartOf="@id/plusBtn"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@android:drawable/ic_menu_search" />
 
                 <ImageButton
-                    android:id="@+id/imageButton2"
+                    android:id="@+id/plusBtn"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_alignParentRight="true"

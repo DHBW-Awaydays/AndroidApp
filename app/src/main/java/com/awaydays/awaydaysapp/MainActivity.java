@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         intentLupe = new Intent(this, search.class);
         searchBtn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 startActivity(intentLupe);

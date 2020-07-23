@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -24,6 +25,20 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnRideL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        CloudAdapter c1 = new CloudAdapter();
+        loginHelper lh = new loginHelper();
+        c1.checkLogin(lh);
+        while(lh.getStatus().equals("PENDING")){}
+        if(lh.getStatus().equals("SUCCESS")){
+            Toast.makeText(this, "LoggedIn", Toast.LENGTH_LONG).show();
+        }else if (lh.getStatus().equals("FAILURE")){
+            Toast.makeText(this, "LoggedOUT", Toast.LENGTH_LONG).show();
+        }
+        if(getIntent().getExtras() !=null)
+        {
+            c1 = getIntent().getParcelableExtra("c1");
+        }
+
         mData = new ArrayList<>();
         mData.add(new Fahrt("TSG Hoffenheim - VfB Stuttgart", "Mannheim", "21.07.2020", 15.00, 4));
         mData.add(new Fahrt("TSG Hoffenheim - VfB Stuttgart", "Mannheim", "21.07.2020", 11.00, 5));

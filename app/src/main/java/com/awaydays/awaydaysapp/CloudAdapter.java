@@ -2,6 +2,8 @@ package com.awaydays.awaydaysapp;
 
 import android.app.Activity;
 import android.os.AsyncTask;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -18,7 +20,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class CloudAdapter {
+public class CloudAdapter implements Parcelable {
     private String baseURL = "http://h2890789.stratoserver.net:5432";
     private static final MediaType FORM = MediaType.parse("multipart/form-data");
     private OkHttpClient client;
@@ -27,6 +29,22 @@ public class CloudAdapter {
         Log.i("info", "in CloudConstructor");
         client = new OkHttpClient();
     }
+
+    protected CloudAdapter(Parcel in) {
+        baseURL = in.readString();
+    }
+
+    public static final Creator<CloudAdapter> CREATOR = new Creator<CloudAdapter>() {
+        @Override
+        public CloudAdapter createFromParcel(Parcel in) {
+            return new CloudAdapter(in);
+        }
+
+        @Override
+        public CloudAdapter[] newArray(int size) {
+            return new CloudAdapter[size];
+        }
+    };
 
     public void execPost(String url, String[][] params, final Activity callingActivity, final TextView toAlter) throws IOException {
         Log.i("info", "in POST");
@@ -86,7 +104,7 @@ public class CloudAdapter {
         });
     }
 
-    public void login(String[][] params, loginHelper loginH) {
+    public void login(String[][] params, final loginHelper loginH) {
         FormBody requestBody = bodybuilder(params).build();
         String url = baseURL+"/login";
         Request request = new Request.Builder().url(url).post(requestBody).build();
@@ -100,15 +118,38 @@ public class CloudAdapter {
 
             @Override
             public void onResponse(@NotNull Call call, @NotNull final Response response) throws IOException {
-                if (response.isSuccessful()) {
+
                     if(response.code()==200){
+                        Log.i("info", "Code is 200");
                         loginH.setStatus("SUCCESS");
                     }else{
+                        Log.i("info", response.code()+"");
                         loginH.setStatus("FAILURE");
                     }
 
-                } else {
-                    Log.i("info", "in POST mo success");
+
+            }
+        });
+    }
+
+    public void checkLogin( final loginHelper loginH){
+        Log.i("info", "in GET");
+        final Request request = new Request.Builder().url(baseURL+"/checkedIsLogin").build();
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                Log.i("info", "in GET ERROR");
+                //inform Serverproblems
+            }
+
+            @Override
+            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+                if(response.code()==200){
+                    Log.i("info", "Code is 200");
+                    loginH.setStatus("SUCCESS");
+                }else{
+                    Log.i("info", response.code()+"");
+                    loginH.setStatus("FAILURE");
                 }
             }
         });
@@ -123,4 +164,13 @@ public class CloudAdapter {
     }
 
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(baseURL);
+    }
 }

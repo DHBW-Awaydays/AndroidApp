@@ -1,6 +1,7 @@
 package com.awaydays.awaydaysapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -106,7 +107,7 @@ public class CloudAdapter implements Parcelable {
 
     public void login(String[][] params, final loginHelper loginH) {
         FormBody requestBody = bodybuilder(params).build();
-        String url = baseURL+"/login";
+        String url = baseURL + "/login";
         Request request = new Request.Builder().url(url).post(requestBody).build();
         client.newCall(request).enqueue(new Callback() {
             @Override
@@ -119,22 +120,22 @@ public class CloudAdapter implements Parcelable {
             @Override
             public void onResponse(@NotNull Call call, @NotNull final Response response) throws IOException {
 
-                    if(response.code()==200){
-                        Log.i("info", "Code is 200");
-                        loginH.setStatus("SUCCESS");
-                    }else{
-                        Log.i("info", response.code()+"");
-                        loginH.setStatus("FAILURE");
-                    }
+                if (response.code() == 200) {
+                    Log.i("info", "Code is 200");
+                    loginH.setSTATUS_SUCCESS();
+                } else {
+                    Log.i("info", response.code() + "");
+                    loginH.setSTATUS_FAILED();
+                }
 
 
             }
         });
     }
 
-    public void checkLogin( final loginHelper loginH){
+    public void checkLogin(final loginHelper loginH) {
         Log.i("info", "in GET");
-        final Request request = new Request.Builder().url(baseURL+"/checkedIsLogin").build();
+        final Request request = new Request.Builder().url(baseURL + "/checkedIsLogin").build();
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NotNull Call call, @NotNull IOException e) {
@@ -144,11 +145,11 @@ public class CloudAdapter implements Parcelable {
 
             @Override
             public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
-                if(response.code()==200){
+                if (response.code() == 200) {
                     Log.i("info", "Code is 200");
                     loginH.setStatus("SUCCESS");
-                }else{
-                    Log.i("info", response.code()+"");
+                } else {
+                    Log.i("info", response.code() + "");
                     loginH.setStatus("FAILURE");
                 }
             }

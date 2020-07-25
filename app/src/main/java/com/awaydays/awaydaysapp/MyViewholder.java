@@ -21,10 +21,7 @@ public class MyViewholder extends RecyclerView.ViewHolder implements View.OnClic
         bewertung = itemView.findViewById(R.id.bewertungRb);
         this.onRideListener = onRideListener;
         itemView.setOnClickListener(this);
-
     }
-
-
 
     @Override
     public void onClick(View view) {

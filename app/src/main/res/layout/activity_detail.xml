@@ -21,8 +21,8 @@
 
             <TextView
                 android:id="@+id/awaydaysTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="137dp"
+                android:layout_height="46dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="2dp"
                 android:foregroundTint="#FFFFFF"
@@ -86,11 +86,11 @@
                 style="?android:attr/ratingBarStyleIndicator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
                 android:clickable="false"
                 android:isIndicator="true"
                 android:rating="4"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/profilbild2"
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -226,14 +226,11 @@
 
             <TextView
                 android:id="@+id/fahrtbioTv"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
                 android:text="Hallo ich bin der bärtige Bartholomäus. Freunde dürfen mich Barti nennen. Also nennt mich einfach Bartholomäus."
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
@@ -241,9 +238,9 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="64dp"
-                android:layout_marginTop="64dp"
+                android:layout_marginTop="84dp"
                 android:text="Bartholomäus Barth"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/profilbild2"
                 app:layout_constraintTop_toTopOf="parent" />
 
